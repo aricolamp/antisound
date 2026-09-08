@@ -37,10 +37,15 @@ body:before{
 
 /* ---------- Nav ---------- */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:30;
+  position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;justify-content:center;align-items:center;
-  padding:24px 5vw;padding-top:max(16px,env(safe-area-inset-top));
+  padding:24px 5vw;
+  padding-top:calc(env(safe-area-inset-top, 0px) + 16px);
   background:var(--black);
+}
+nav:after{
+  content:"";position:absolute;left:0;right:0;bottom:100%;
+  height:100vh;background:var(--black);pointer-events:none;
 }
 .navlinks{display:flex;gap:26px;font-family:"Geist Pixel",sans-serif}
 .navlinks a{color:var(--light);text-decoration:none;opacity:.75;font-size:16px;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
@@ -187,7 +192,7 @@ footer{
 }
 
 @media(max-width:700px){
-  nav{padding:14px 4vw;padding-top:max(12px,env(safe-area-inset-top))}
+  nav{padding:14px 4vw;padding-top:calc(env(safe-area-inset-top, 0px) + 14px)}
   .navlinks{gap:4vw;width:100%;justify-content:space-between}
   .navlinks a{font-size:12px;letter-spacing:.04em;padding:10px 0}
   .hero{min-height:100svh;padding:18vh 5vw 8vh}
