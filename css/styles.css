@@ -43,6 +43,11 @@ nav{
   padding-top:calc(env(safe-area-inset-top, 0px) + 16px);
   background:var(--black);
 }
+nav:before{
+  content:"";position:absolute;left:0;right:0;top:100%;
+  height:56px;pointer-events:none;
+  background:linear-gradient(to bottom,var(--black),rgba(10,8,13,0));
+}
 nav:after{
   content:"";position:absolute;left:0;right:0;bottom:100%;
   height:100vh;background:var(--black);pointer-events:none;
